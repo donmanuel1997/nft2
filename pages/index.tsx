@@ -9,14 +9,14 @@ interface Props {
 
 const Home = ({ collections }: Props) => {
   return (
-  <div className="flex h-screen flex-col bg-gradient-to-br from-cyan-800 to-slate-600">
-     <div className="header-2">
+  <div className="flex h-screen flex-col bg-gradient-to-br from-cyan-800 to-slate-600 ">
+     <div className="header-2 ">
 
-<nav className="bg-white py-2 md:py-4">
+<nav className="bg-white py-2 md:py-4 ">
   <div className="container px-4 mx-auto md:flex md:items-center">
 
     <div className="flex justify-between items-center">
-      <a href="#" className="font-bold text-xl text-indigo-600">NFT APES </a>
+      <a href="#" className="font-bold text-xl text-indigo-600">PRIME NFT </a>
       <button className="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
         <i className="fas fa-bars"></i>
       </button>
@@ -30,52 +30,38 @@ const Home = ({ collections }: Props) => {
   </div>
 </nav>
 </div>
+
+
     
 <div className="team-2 bg-gray-800 py-6 md:py-12 min-h-screen">
   <div className="container mx-auto px-4">
 
     <div className="md:w-10/12 xl:w-8/12 md:mx-auto">
-      <h1 className="font-medium text-3xl md:text-4xl text-white text-center mb-4">NFT APES MARKET PLACE</h1> </div>
+      <h1 className="font-medium text-3xl md:text-4xl text-white text-center mb-4 p-5">PRIME NFT's MARKET PLACE</h1> </div>
   </div>
-  <div className=" py-6 md:py-1 min-h-screen">
-  <div className="container mx-auto px-4">
-
-    <div className="md:flex md:-mx-2 mt-1 md:mt-1 xl:pt-12 px-1 md:px-0">
-
-      <div className="team-profile-wrap bg-white mx-auto md:w-1/5 px-1 md:py-2">
-        <div className="team-profile text-center p-10">
-          
-          <main>
-        <div>
+  <div className=' max-w-7xl mx-auto flex flex-col min-h-screen py-20 px-10 2xl:px-0'>
+    <main className=' bg-slate-300 p-10 shadow-xl shadow-red-700/50'>
+        <div className='grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
             {collections.map(collection => (
                 <a href={`/nft/${collection.slug.current}`}>
-                <div>
-                <div className="w-32 h-34 mx-auto rounded-full overflow-hidden">
-                    <img src={urlFor(collection.mainImage).url()} alt="" />
-                    <div></div>
+                <div className="flex cursor-pointer flex-col items-center transition-all duration-200 hover:scale-105">
+                  <img className='w-60 h-96 rounded-2xl object-cover  shadow-xl shadow-red-700/50' src={urlFor(collection.mainImage).url()} alt="" />
+               <div className="">
+                <h2  className="text-3xl px-10 py-2 mb-1">{collection.title}</h2>
+                <p className=" bg-white mt-2 text-sm text-slate-900  px-10 justify-items-center">{collection.description}</p>
                 </div>
-                <p  className="">{collection.title}</p>
-                <p className="text-gray-600 text-sm">{collection.description}</p>
                 </div>
                 </a>
             ))}
         </div>
     </main>
-         
-        </div>
-       </div>
-    </div>
-    </div> 
-</div>
-
-
-      
-
-
-
   </div>
+    <br/><br/><br/><br/>
+         
+       
+</div>
+</div>
    
-    </div>
   )
 }
 
